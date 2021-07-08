@@ -72,6 +72,7 @@ namespace vkapplication
 
             foreach (User user in getFriends)
             {
+                listBox1.Items.Add(Encoding.UTF8.GetString(Encoding.GetEncoding(1251).GetBytes(user.FirstName)));
                 if (user.BirthDate == null)
                 {
                     continue;
@@ -81,7 +82,6 @@ namespace vkapplication
                     int swap = Convert.ToInt32(Strings.Right(user.BirthDate, 4));
                     ListofAges.Add(swap);
                 }
-                listBox1.Items.Add(Encoding.UTF8.GetString(Encoding.GetEncoding(1251).GetBytes(user.FirstName)));
             }
 
             for (int i = 0; i < ListofAges.Count; i++)
